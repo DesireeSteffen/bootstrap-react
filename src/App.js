@@ -1,54 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-import { Container, Row, Col, Button, Alert, Breadcrumb, Card , Form} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Container>
-        <Form>
-         <Row>
-           <Col md>
-           <Form.Group controlId="formEmail">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control type="email" placeholder='Example@email.com'/>
-            <Form.Text className='text-muted'>
-              We Will Never Share Your Email Address, trust us!
-            </Form.Text>
-            </Form.Group>
-            </Col>
-            <Col md>
-            <Form.Group controlId="formPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder='Password Here'/>
-          </Form.Group >
-          </Col>
-         </Row>
-          <Button variant='secondary' type='submit'>Login</Button>
-        </Form>
-        <Card className="mb-3" style={{color:"#000"}}>
-          <Card.Img src="https://picsum.photos/200/50"/>
-          <Card.Body>
-            <Card.Title>Card Example</Card.Title>
-            <Card.Text>
-              This is an example of react-bootstrap cards
-            </Card.Text>
-            <Button variant='primary'>Read More</Button>
-          </Card.Body>
-        </Card>
-        <Breadcrumb>
-        <Breadcrumb.Item>Test</Breadcrumb.Item>
-        <Breadcrumb.Item>Test 2</Breadcrumb.Item>
-        <Breadcrumb.Item active>Test 3</Breadcrumb.Item>
-        </Breadcrumb>
-      <Alert variant='success'>This is a button</Alert>
-       <Button>Test Button</Button>
-       </Container>
-      </header>
-    </div>
+    <Container id="main-container" className="d-grid h-100">
+      <Form id="sign-in-form" className="text-center p-3 w-100">
+        <img className="mb-4 bootstrap-logo" 
+              src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" 
+              alt="Bootstrap 5" />
+        <h1 className="mb-3 fs-3 fw-normal">Please sign in</h1>
+        <Form.Group controlId="sign-in-email-address">
+          <Form.Control type="email" size="lg" placeholder="Email address" autoComplete="username" className="position-relative" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="sign-in-password">
+          <Form.Control type="password" size="lg" placeholder="Password" autoComplete="current-password" className="position-relative" />
+        </Form.Group>
+        
+        <Form.Group className="d-flex justify-content-center mb-4" controlId="remember-me">
+          <Form.Check label="Remember me" />
+        </Form.Group>
+        <div className="d-grid">
+          <Button variant="primary" size="lg">Sign in</Button>
+        </div>
+        <p className="mt-5 text-muted">&copy; 2021-2022</p>
+      </Form>
+    </Container>
   );
 }
 
